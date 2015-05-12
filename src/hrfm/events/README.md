@@ -4,7 +4,7 @@ package ::hrfm::events
 
 ## EventDispatcher
 
-### Exsample
+### Example
 
 ```cpp
 class MyClass{
