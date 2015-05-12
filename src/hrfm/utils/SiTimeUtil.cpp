@@ -90,10 +90,8 @@ namespace hrfm{ namespace utils{
         }
         
         // --- Timer.
-        
-        float elapsedTime = ci::app::getElapsedSeconds();
         for( auto itr=_timerList.begin(),end=_timerList.end(); itr!=end; ++itr ){
-            (*itr)->update(elapsedTime);
+            (*itr)->update();
         }
         
     }
