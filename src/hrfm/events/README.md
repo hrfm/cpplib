@@ -41,6 +41,6 @@ new MyClass();
 
 ### Result
 
-    Event dispatched! : 0
     Event dispatched! : 1
     Event dispatched! : 2
+    Event dispatched! : 3
