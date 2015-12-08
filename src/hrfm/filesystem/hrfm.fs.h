@@ -10,6 +10,23 @@ using namespace boost;
 
 namespace hrfm { namespace fs{
     
+    static filesystem::path getHomeDirectory(){
+        filesystem::path path = getenv("HOME");
+        return path;
+    }
+    
+    static filesystem::path resolvePath( filesystem::path path ){
+        filesystem::path resolvedPath;
+        string pathStr = path.string();
+        if( pathStr.find("~/") == 0 ){
+            pathStr.erase(0,2);
+            resolvedPath = getHomeDirectory() / pathStr;
+        }else{
+            resolvedPath = pathStr;
+        }
+        return resolvedPath;
+    }
+    
     // --------------------------------------------------------------------------------------------------------------
     
     const static string FILE_TYPE_PIC = "pic";
