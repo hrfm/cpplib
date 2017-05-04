@@ -4,7 +4,7 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/date_time/gregorian/gregorian.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
-#include <boost/date_time/c_local_time_adjustor.hpp>
+//#include <boost/date_time/c_local_time_adjustor.hpp>
 
 #include "Singleton.h"
 #include "TimeUtilEvent.h"
