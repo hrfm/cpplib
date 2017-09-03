@@ -29,6 +29,21 @@ namespace hrfm { namespace fs{
     
     // --------------------------------------------------------------------------------------------------------------
     
+    static bool createDirectory( filesystem::path path ){
+        boost::system::error_code error;
+        if( !filesystem::exists( path ) ){
+            const bool result = filesystem::create_directory(path, error);
+            if (!result || error) {
+                std::cout << "Cannot create directory." << std::endl;
+                std::cout << error << std::endl;
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    // --------------------------------------------------------------------------------------------------------------
+    
     const static string FILE_TYPE_PIC = "pic";
     const static string FILE_TYPE_MOV = "mov";
     
@@ -45,7 +60,7 @@ namespace hrfm { namespace fs{
     
     // --------------------------------------------------------------------------------------------------------------
     
-    static vector<filesystem::path> getFileList( filesystem::path dir, bool ignoreDotFiles = true, bool sortByNumeric = true, filesystem::path createCopyInto = "" ){
+    static vector<filesystem::path> getFileList( filesystem::path dir, bool ignoreDotFiles = true, bool sortByNumeric = false, filesystem::path createCopyInto = "" ){
         
         try{
             

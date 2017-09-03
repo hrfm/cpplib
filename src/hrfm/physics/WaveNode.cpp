@@ -21,7 +21,7 @@ namespace hrfm { namespace physics{
     }
     
     void WaveNode::addWave( float pow, float decline, float t ){
-        mWaves.push_back( new DeclineWave( pow, decline, t ) );
+        mWaves.emplace_back( new DeclineWave( pow, decline, t ) );
     }
     
     void WaveNode::prepare(){

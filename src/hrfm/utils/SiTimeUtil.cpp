@@ -132,7 +132,7 @@ namespace hrfm{ namespace utils{
     }
     
     void SiTimeUtil::addTiming( const string type, TimingData * timing ){
-        _timingList[type].push_back( timing );
+        _timingList[type].emplace_back( timing );
     }
     
     void SiTimeUtil::removeTiming( const string type ){
@@ -147,7 +147,7 @@ namespace hrfm{ namespace utils{
     
     void SiTimeUtil::addTimer( Timer * timer ){
         eraseFromTimerList(timer);
-        _timerList.push_back(timer);
+        _timerList.emplace_back(timer);
     }
     
     void SiTimeUtil::removeTimer( Timer * timer ){

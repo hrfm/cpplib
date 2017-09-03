@@ -84,7 +84,7 @@ namespace hrfm { namespace events{
         template <class T, class E>
         void addEventListener( const std::string &type, T * listener, void (T::*handler)(E*), int priority = 0, bool useWeakReference = false ){
             removeEventListener( type, listener, handler );
-            _listenerList[type][priority].push_back( new EventListener<T,E>(listener,handler) );
+            _listenerList[type][priority].emplace_back( new EventListener<T,E>(listener,handler) );
         }
         
         //! 登録されたリスナを解除します.
@@ -143,7 +143,7 @@ namespace hrfm { namespace events{
                 
             }else{
                 
-                _removeList.push_back(listener);
+                _removeList.emplace_back(listener);
                 
             }
             

@@ -37,7 +37,7 @@ namespace hrfm{ namespace structure{
     TreeNode * TreeNode::addChild( TreeNode * child ){
         this->eraseFromChildren(child);
         child->_setParent(this);
-        this->children.push_back(child);
+        this->children.emplace_back(child);
         return child;
     }
     

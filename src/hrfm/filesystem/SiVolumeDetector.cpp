@@ -11,7 +11,7 @@ namespace hrfm{ namespace fs{
     void SiVolumeDetector::init( vector<string> * ignoreVolumeList ){
         _ignoreVolumeList = ignoreVolumeList;
         if( _ignoreVolumeList->size() == 0 ){
-            _ignoreVolumeList->push_back("Macintosh HD");
+            _ignoreVolumeList->emplace_back("Macintosh HD");
         }
     }
     
